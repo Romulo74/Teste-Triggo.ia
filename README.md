@@ -80,6 +80,26 @@ Certifique-se de que o notebook Jupyter (`.ipynb`) esteja no mesmo diretório qu
 * A biblioteca geopandas foi utilizada para a tentativa de criação do mapa de calor.
 * A biblioteca numpy foi utilizada para operações numéricas.
 
+## Limitações e Possíveis Melhorias
+
+Durante a realização deste projeto, algumas limitações foram encontradas, e certos aspectos não foram explorados em profundidade devido a restrições de tempo ou à disponibilidade de dados:
+
+* **Segmentação de Clientes:** A análise de segmentação de clientes foi iniciada utilizando o algoritmo K-Means, mas não foi possível realizar uma análise completa dos perfis dos clusters e propor estratégias de marketing detalhadas para cada segmento. Uma análise mais aprofundada incluiria a escolha otimizada do número de clusters (utilizando métodos como o Elbow Method ou Silhouette Analysis), a visualização dos clusters em um espaço dimensional reduzido (usando PCA ou t-SNE) e a caracterização detalhada de cada segmento em termos de comportamento de compra, dados demográficos (se disponíveis) e outras informações relevantes.
+
+* **Predição de Atraso:** O modelo de Regressão Logística implementado para a predição de atrasos apresentou limitações na capacidade de identificar corretamente os pedidos que seriam entregues com atraso (baixa precisão e recall para a classe positiva). Melhorias nesse modelo poderiam incluir:
+    * A engenharia de novas *features* que capturem melhor a complexidade do problema de atrasos na entrega.
+    * A experimentação com outros algoritmos de classificação (Random Forest, Gradient Boosting, etc.).
+    * A otimização dos hiperparâmetros do modelo para melhorar seu desempenho.
+    * A coleta de mais dados relevantes para o problema, se possível.
+
+* **Análise de Satisfação:** A análise da satisfação do cliente se concentrou principalmente na relação com o tempo de entrega. Outros fatores que poderiam influenciar a satisfação, como preço, categoria do produto, qualidade do produto, atendimento ao cliente e experiência de compra, não foram explorados em profundidade devido à falta de dados abrangentes sobre esses aspectos.
+
+* **Mapa de Calor:** A geração do mapa de calor da concentração de vendas por estado foi prejudicada pela ausência do arquivo shapefile (`brasil_estados.shp`) no diretório especificado. A inclusão desse mapa enriqueceria a visualização da distribuição geográfica das vendas.
+
+* **Análise Temporal Detalhada:** A análise da sazonalidade e das tendências de vendas poderia ser aprimorada com uma análise de séries temporais mais avançada, utilizando métodos como decomposição de séries temporais, modelos ARIMA ou Prophet, para prever as vendas futuras com maior precisão.
+
+Essas limitações representam oportunidades para trabalhos futuros e indicam áreas onde o projeto poderia ser expandido e aprimorado com mais tempo e recursos.
+
 ## Autor
 
 Romulo Augusto Vieira.
