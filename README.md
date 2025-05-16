@@ -8,11 +8,20 @@ Este repositório contém o notebook Jupyter desenvolvido para o Teste Técnico 
 
 O notebook está organizado nas seguintes seções principais:
 
-1.  **Preparação dos Dados:** Importação dos arquivos CSV, tratamento de valores nulos, remoção de duplicatas, correção de tipos de dados e criação de um modelo relacional através da junção das tabelas relevantes.
-2.  **Análise Exploratória de Dados (AED):** Investigação de perguntas chave como o volume de pedidos por mês e a existência de sazonalidade, a distribuição do tempo de entrega, a relação entre o valor do frete e a distância, as categorias de produtos mais vendidas por faturamento e os estados com maior valor médio de pedido.
+1.  **Preparação dos Dados:** Importação dos arquivos CSV, tratamento de valores nulos, remoção de duplicatas, correção de tipos de dados e criação de um modelo relacional através da junção das tabelas relevantes. **Em alguns casos, o SQLite foi utilizado através do Python para realizar consultas específicas nos DataFrames.**
+2.  **Análise Exploratória de Dados (AED):** Investigação de perguntas chave como o volume de pedidos por mês e a existência de sazonalidade, a distribuição do tempo de entrega, a relação entre o valor do frete e a distância, as categorias de produtos mais vendidas por faturamento e os estados com maior valor médio de pedido. **Tanto Python (com pandas) quanto consultas SQL (via SQLite) foram utilizados nesta seção.**
 3.  **Solução de Problemas de Negócio:** Abordagem de desafios específicos como o cálculo da taxa de clientes recorrentes, a criação de um modelo de previsão de atrasos na entrega e uma análise inicial da satisfação do cliente em relação ao tempo de entrega. A segmentação de clientes foi iniciada.
 4.  **Visualização e Dashboards:** Criação de visualizações para ilustrar os insights da análise exploratória e o desempenho dos modelos, incluindo um dashboard geral de vendas, um mapa de calor da concentração de vendas, gráficos da relação entre avaliação e tempo de entrega e um dashboard de análise dos vendedores.
 
+## Decisões Técnicas
+
+* A biblioteca pandas foi extensivamente utilizada para manipulação e análise dos dados devido à sua flexibilidade e poder para trabalhar com DataFrames. **Para algumas consultas e agregações específicas, o SQLite foi integrado ao Python para realizar operações SQL diretamente nos DataFrames, demonstrando o uso de SQL no projeto.**
+* Para visualizações, foram utilizadas as bibliotecas matplotlib e seaborn, escolhidas por sua capacidade de gerar gráficos informativos e personalizáveis.
+* O modelo de Regressão Logística foi selecionado para a predição de atrasos devido à sua interpretabilidade e eficiência como um classificador linear para problemas binários.
+* A técnica de K-Means foi escolhida para a segmentação de clientes por ser um algoritmo de clustering amplamente utilizado e eficiente.
+* A biblioteca numpy foi utilizada para operações numéricas eficientes.
+* A biblioteca geopandas foi utilizada para a criação do mapa de calor da concentração de vendas.
+* A biblioteca geopy foi utilizada para o cálculo da distância geodésica entre vendedores e clientes.
 ## Principais Insights da Análise Exploratória de Dados
 
 * **Sazonalidade:** Foi observada uma certa sazonalidade nas vendas ao longo do ano, com alguns meses apresentando um volume de pedidos maior que outros. A análise da evolução anual também indica tendências de crescimento.
@@ -62,6 +71,7 @@ Este dashboard exibe o desempenho dos vendedores em termos de faturamento total 
 Para executar o código e visualizar as análises, é necessário ter o Python instalado em seu ambiente, juntamente com as seguintes bibliotecas:
 
 * pandas
+* SQLite
 * numpy
 * matplotlib
 * seaborn
@@ -80,7 +90,7 @@ Certifique-se de que o notebook Jupyter (`.ipynb`) esteja no mesmo diretório qu
 
 ## Autor
 
-[Seu Nome]
+Romulo Augusto Vieira
 
 ## Link para o Dataset
 
